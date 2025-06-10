@@ -1,0 +1,14 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: "app2-servicemonitor"
+spec:
+  selector:
+    matchLabels:
+      app: "app2"
+  endpoints:
+  - port: 8081
+    path: "/app2/actuator/prometheus"
+  namespaceSelector:
+    matchNames:
+      - default

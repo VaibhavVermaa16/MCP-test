@@ -1,0 +1,38 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: "app2-network-policy"
+spec:
+  podSelector:
+    matchLabels:
+      app: "app2"
+  policyTypes:
+  - Ingress
+  - Egress
+  ingress:
+  - from:
+    - namespaceSelector:
+        matchLabels:
+          name: "namespace-a"
+    - namespaceSelector:
+        matchLabels:
+          name: "namespace-b"
+    ports:
+    - port: 8081
+    - port: 5432
+    - port: 6379
+  egress:
+  - to:
+    - podSelector:
+        matchLabels:
+          app: "database"
+    - podSelector:
+        matchLabels:
+          app: "redis"
+    - podSelector:
+        matchLabels:
+          app: "external-api"
+    ports:
+    - port: 8081
+    - port: 5432
+    - port: 6379
