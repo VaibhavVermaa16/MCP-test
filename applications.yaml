@@ -1,0 +1,4 @@
+applications:
+  - name: "existing-app-1"
+    owner: "team-alpha"
+    repository: "https://github.com/example/existing-app-1"
