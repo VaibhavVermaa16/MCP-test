@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: "app2-config"
+data:
+  db_url: "jdbc:postgresql://db-host:5432/app2"
+  redis_host: "redis-service:6379"
+  logging_level: "INFO"
+  external_api: "https://api.example.com/v1"

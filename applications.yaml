@@ -1,4 +1,8 @@
+# filepath: /Users/vaibhav.verma/Desktop/MCP-test/applications.yaml
 applications:
   - name: "existing-app-1"
     owner: "team-alpha"
     repository: "https://github.com/example/existing-app-1"
+  - name: "app2"
+    owner: "team-beta"
+    repository: "https://github.com/example/app2"
